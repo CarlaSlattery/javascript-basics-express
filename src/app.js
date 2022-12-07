@@ -1,10 +1,12 @@
 const express = require('express');
-const strings = require('./routes/strings');
-const numbers = require('./routes/numbers');
+const numberRouter = require('./routes/numberRouter');
 
 const app = express(); // init express
 
-app.use('/strings', strings);
-app.use('/numbers', numbers);
+const stringsRouter = require('./routes/stringsRouter');
+
+app.use(express.json());
+app.use('/strings', stringsRouter);
+app.use('./numbers', numberRouter);
 
 module.exports = app;
