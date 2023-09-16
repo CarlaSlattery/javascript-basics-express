@@ -69,4 +69,16 @@ describe('/strings', () => {
         });
     });
   });
+
+  describe('GET /count-characters/{string}', () => {
+    it('returns the number of characters in a string', done => {
+      request(app)
+        .get('/strings/count-characters/express')
+        .then(res => {
+          expect(res.status).toEqual(200);
+          expect(res.body).toEqual({ result: 7 });
+          done();
+        });
+    });
+  });
 });

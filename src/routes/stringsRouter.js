@@ -8,6 +8,7 @@ const {
   lowercase,
   firstCharacter,
   firstCharacters,
+  countCharacters,
 } = require('../lib/strings');
 
 stringsRouter.get('/hello/:string', (req, res) => {
@@ -27,6 +28,10 @@ stringsRouter.get('/first-characters/:string', (req, res) => {
   } else {
     res.status(200).json({ result: firstCharacter(req.params.string) });
   }
+});
+
+stringsRouter.get('/count-characters/:string', (req, res) => {
+  return res.status(200).json({ result: countCharacters(req.params.string) });
 });
 
 module.exports = stringsRouter;

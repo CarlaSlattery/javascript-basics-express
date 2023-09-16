@@ -21,8 +21,8 @@ arraysRouter.post('/to-string', (req, res) => {
   return res.status(200).json({ result: arrayToCSVString(array) });
 });
 
-arraysRouter.post('append', (req, res) => {
-  const { value } = req.params;
+arraysRouter.post('/append', (req, res) => {
+  const { value } = req.query;
   const { array } = req.body;
   return res.status(200).json({ result: addToArray2(value, array) });
 });
@@ -33,7 +33,7 @@ arraysRouter.post('/starts-with-vowel', (req, res) => {
 });
 
 arraysRouter.post('/remove-element', (req, res) => {
-  const index = req.params.index || 0;
+  const { index } = req.query;
   const { array } = req.body;
   return res.status(200).json({ result: removeNthElement2(index, array) });
 });

@@ -30,12 +30,12 @@ booleansRouter.post('/truthiness', (req, res) => {
   return res.status(200).json({ result: truthiness(value) });
 });
 
-booleansRouter.get('is-odd/:value', (req, res) => {
-  const { value } = req.params;
-  res.status(200).json({ result: isOdd(value) });
+booleansRouter.post('is-odd/:{number}', (req, res) => {
+  const { number } = req.params;
+  res.status(200).json({ result: isOdd(number) });
 });
 
-booleansRouter.get('/cat/starts-with/:char', (req, res) => {
+booleansRouter.post('/cat/starts-with/:char', (req, res) => {
   const { char } = req.params;
   res.status(200).json({ result: startsWith(char, 'cat') });
 });
