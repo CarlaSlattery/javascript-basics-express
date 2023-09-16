@@ -1,7 +1,6 @@
 const express = require('express');
 
 const numbersController = require('../controllers/numbersController');
-const numbersMiddlewear = require('../middlewear/numbersMiddlewear');
 
 const numberRouter = express.Router();
 

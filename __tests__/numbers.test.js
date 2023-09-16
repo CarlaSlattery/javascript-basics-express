@@ -105,7 +105,7 @@ describe('/numbers', () => {
         .send({ a: 'fish' })
         .then(res => {
           expect(res.status).toEqual(400);
-          expect(res.body).toEqual({ error: 'Parameters "a" and "b" are required.' });
+          expect(res.body).toEqual({ error: 'Parameters "a" and "b" must be valid numbers.' });
           done();
         });
     });

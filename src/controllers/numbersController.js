@@ -4,7 +4,7 @@ const addNums = (req, res) => {
   const num1 = parseInt(req.params.num1, 10);
   const num2 = parseInt(req.params.num2, 10);
   if (Number.isNaN(num1) || Number.isNaN(num2)) {
-    res.status(400).json({ error: 'Parameter must be valid numbers.' });
+    res.status(400).json({ error: 'Parameters must be valid numbers.' });
   } else {
     res.status(200).json({ result: add(num1, num2) });
   }
@@ -14,7 +14,7 @@ const subtractNums = (req, res) => {
   const num1 = parseInt(req.params.num1, 10);
   const num2 = parseInt(req.params.num2, 10);
   if (Number.isNaN(num1) || Number.isNaN(num2)) {
-    res.status(400).json({ error: 'Parameter must be valid numbers.' });
+    res.status(400).json({ error: 'Parameters must be valid numbers.' });
   } else {
     res.status(200).json({ result: subtract(num1, num2) });
   }
@@ -25,7 +25,7 @@ const multiplyNums = (req, res) => {
   const b = parseInt(req.body.b, 10);
 
   if (!a || !b) {
-    res.status(400).json({ error: 'Parameters "a" and "b" are required.' });
+    res.status(400).json({ error: 'Parameters "a" and "b" must be valid numbers.' });
   } else {
     res.status(200).json({ result: multiply(a, b) });
   }
